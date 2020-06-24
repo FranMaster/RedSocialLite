@@ -1,9 +1,7 @@
 const express=require('express');
-let app=express();
-
-app.get('/',(req,res)=>{
-    res.status(200).send('Running');
+const config=require('./config/config');
+let app=config(express());
+app.listen(3000,()=>{
+    console.log('Runnig');
 });
 
-
-app.listen(3000,()=>{console.log('Server is Running.')})
